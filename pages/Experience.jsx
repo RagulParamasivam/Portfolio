@@ -1,0 +1,5 @@
+import { BriefcaseBusiness, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { experience } from "../data";
+import { PageIntro } from "../components/UI";
+export default function Experience() { return <div className="container page"><PageIntro eyebrow="04 / FIELD EXPERIENCE" title={<>Where I've <span className="gradient-text">learned.</span></>} description="Internship experiences that introduced me to game development, software, web technologies, and cybersecurity."/><div className="experience-list">{experience.map((e,i)=><motion.article className="panel experience-card" key={e.company+e.role+i} initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:i*.08}}><div className="experience-number mono">0{i+1}</div><div className="experience-main"><div className="experience-meta"><span className="tag">{e.mode}</span><span className="mono">{e.period}</span></div><h2>{e.company}</h2><h3>{e.role}</h3><p>{e.description}</p></div><div className="experience-icon"><BriefcaseBusiness size={22}/></div></motion.article>)}</div><p className="note-line mono">DETAILS AND DURATIONS ARE SHOWN AS PROVIDED IN THE RESUME.</p></div>; }

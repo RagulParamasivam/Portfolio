@@ -1,0 +1,5 @@
+import { Award, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import { certifications } from "../data";
+import { PageIntro } from "../components/UI";
+export default function Certifications() { return <div className="container page"><PageIntro eyebrow="06 / CONTINUOUS LEARNING" title={<>Certifications & <span className="gradient-text">learning.</span></>} description="Courses and certifications that reflect my curiosity across emerging technologies."/><div className="cert-grid">{certifications.map((c,i)=><motion.article className="panel cert-card" key={c.issuer+c.name} initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:i*.08}}><div className="cert-top"><div className="card-icon"><Award size={23}/></div><span className="mono">CERT / 0{i+1}</span></div><div className="cert-issuer">{c.issuer}</div><h2>{c.name}</h2><div className="cert-footer"><span>Certificate details can be added</span><ExternalLink size={16}/></div></motion.article>)}</div><p className="note-line mono">ADD CERTIFICATE FILES OR VERIFICATION LINKS TO ENABLE VIEW BUTTONS.</p></div>; }
